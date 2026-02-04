@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8"><title>Patient Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white p-4 shadow-sm flex justify-between items-center">
+        <img src="icon.jpeg" alt="Logo" class="h-10">
+        <div class="space-x-6"><a href="index.html">Home</a><a href="account.html" class="text-blue-600">Account</a></div>
+    </nav>
+
+    <main class="max-w-xl mx-auto p-6 bg-white mt-10 rounded-2xl shadow-xl">
+        <h2 class="text-2xl font-bold border-b pb-4 mb-6">Patient Health Record</h2>
+        
+        <form class="space-y-4">
+            <input type="text" placeholder="Full Name" class="w-full border p-3 rounded-lg">
+            <div class="grid grid-cols-2 gap-4">
+                <input type="number" placeholder="Age" class="w-full border p-3 rounded-lg">
+                <input type="date" class="w-full border p-3 rounded-lg">
+            </div>
+            <input type="text" placeholder="Address / Station" class="w-full border p-3 rounded-lg">
+            <textarea placeholder="Basic Health History" class="w-full border p-3 rounded-lg"></textarea>
+            
+            <div class="p-4 bg-blue-50 rounded-lg text-xs text-blue-800">
+                🛡️ Your data is stored locally and protected for your privacy.
+            </div>
+
+            <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg">Update Profile</button>
+        </form>
+
+        <footer class="mt-12 pt-6 border-t text-center">
+            <p class="text-gray-500 text-sm">Emergency Support 24/7:</p>
+            <p class="text-2xl font-bold text-red-600">+91 2026805264</p>
+        </footer>
+    </main>
+</body>
+</html>
