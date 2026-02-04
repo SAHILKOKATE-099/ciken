@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css">
-    <meta charset="UTF-8"><title>Recovery Diet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chikungunya Awareness | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-gray-50">
-    <nav class="bg-white p-4 shadow-sm flex justify-between items-center">
-        <img src="icon.jpeg" alt="Logo" class="h-10">
-        <div class="space-x-6"><a href="index.html">Home</a><a href="diet.html" class="text-blue-600">Diet</a></div>
+    <nav class="bg-white p-4 shadow-sm flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <img src="icon.jpeg" alt="Logo" class="h-10 w-10 object-cover rounded">
+            <span id="navUserName" class="text-blue-700 font-bold text-lg border-l-2 border-gray-300 pl-3">Guest</span>
+        </div>
+        <div class="space-x-6 font-medium">
+            <a href="index.html" class="text-blue-600">Home</a>
+            <a href="diet.html" class="hover:text-blue-600 transition">Diet</a>
+            <a href="safety.html" class="hover:text-blue-600 transition">Safety</a>
+            <a href="account.html" class="hover:text-blue-600 transition">Account</a>
+        </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto p-6">
-        <h1 class="text-3xl font-bold text-green-700 mb-8 text-center">Food & Recovery Guide</h1>
-        
-        <div class="grid md:grid-cols-2 gap-6 mb-10">
-            <div class="bg-red-50 p-6 rounded-xl border-l-8 border-red-500">
-                <h3 class="font-bold text-red-700 text-xl mb-3">❌ Avoid Foods</h3>
-                <ul class="list-disc ml-5 space-y-2">
-                    <li>Oily & Deep Fried Food</li>
-                    <li>Spicy Chilies</li>
-                    <li>Sugary Sodas</li>
-                    <li>Processed Junk Food</li>
-                </ul>
+    <section class="max-w-5xl mx-auto p-6">
+        <div class="text-center my-10">
+            <h1 class="text-4xl font-extrabold text-gray-900">Understanding Chikungunya</h1>
+            <p class="text-gray-600 mt-2 italic">Prevention is better than cure.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-center mb-12">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">How it Spreads</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Chikungunya is a viral disease transmitted to humans by infected mosquitoes—specifically the <strong>Aedes aegypti</strong> and <strong>Aedes albopictus</strong> species. These mosquitoes typically bite during daylight hours.
+                </p>
+                
             </div>
-            <div class="bg-green-50 p-6 rounded-xl border-l-8 border-green-500">
-                <h3 class="font-bold text-green-700 text-xl mb-3">✅ Healthy Foods</h3>
-                <ul class="list-disc ml-5 space-y-2">
-                    <li>Fresh Fruits (Citrus/Papaya)</li>
-                    <li>Green Leafy Vegetables</li>
-                    <li>Hydrating Fluids (Coconut Water)</li>
-                    <li>Light Meals (Porridge/Moong Dal)</li>
-                </ul>
+            <div class="rounded-xl overflow-hidden shadow-xl bg-black">
+                <video controls class="w-full">
+                    <source src="mosquite.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
 
-        <h3 class="text-2xl font-bold mb-4">Daily Meal Plan</h3>
-        <div class="bg-white rounded-xl shadow overflow-hidden">
-            <div class="p-4 border-b bg-gray-50 flex justify-between"><strong>Morning:</strong> <span>Herbal Tea & Fruit Bowl</span></div>
-            <div class="p-4 border-b flex justify-between"><strong>Afternoon:</strong> <span>Steamed Rice, Dal & Curd</span></div>
-            <div class="p-4 flex justify-between"><strong>Night:</strong> <span>Vegetable Soup & 1 Roti</span></div>
+        <div class="bg-white p-8 rounded-2xl shadow-md mb-12 border border-blue-100">
+            <h2 class="text-2xl font-bold mb-6 text-center">Symptom Checker</h2>
+            
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <label class="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                    <input type="checkbox" id="fever" class="w-5 h-5"> <span>High Fever</span>
+                </label>
+                <label class="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                    <input type="checkbox" id="jointPain" class="w-5 h-5"> <span>Severe Joint Pain</span>
+                </label>
+                <label class="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:bg-blue-50 transition">
+                    <input type="checkbox" id="rash" class="w-5 h-5"> <span>Skin Rash</span>
+                </label>
+            </div>
+
+            <div class="text-center">
+                <button onclick="calculateRisk()" class="bg-blue-600 text-white px-10 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">
+                    Check Risk Level
+                </button>
+                <div id="riskResult" class="mt-6"></div>
+            </div>
         </div>
-    </main>
+
+        <div class="bg-red-600 p-5 text-white rounded-lg text-center font-bold animate-pulse">
+            ⚠️ DO NOT IGNORE: If symptoms persist, visit a doctor immediately.
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
